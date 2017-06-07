@@ -1,19 +1,22 @@
 " Python environment
-let g:python3_host_prog = '/Users/carlos/.pyenv/versions/weather/bin/python'
+" let g:python3_host_prog = '/Users/carlos/.pyenv/versions/weather/bin/python'
+let g:python3_host_prog = '/Users/carlos/.pyenv/shims/python'  " new syntax for upgraded virtualenv
+
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Plugins to install
 Plug 'neomake/neomake'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete for text in neovim
-Plug 'davidhalter/jedi-vim' " autocomplete for Python library, use it with deoplete
+Plug 'valloric/youcompleteme' " code completion engine. Make sure to run /{your_plugin_location}/youcompleteme/instal.sh when upgrading or after install
 Plug 'ctrlpvim/ctrlp.vim' " open file goodies
 Plug 'chriskempson/base16-vim' " base16 color themes for Vim
 Plug 'yggdroot/indentline' " display the indention levels with thin vertical lines
 Plug 'bling/vim-airline' " status/tabline for vim
 Plug 'vim-airline/vim-airline-themes' " color themese for vim-airline
 Plug 'scrooloose/nerdtree' " tree file explorer
+Plug 'heavenshell/vim-pydocstring'  " auto docstring generator
+Plug 'chaimleib/vim-renpy'  " Renpy syntax highlighting
 
 " Initialize plugin system
 call plug#end()
@@ -45,4 +48,4 @@ let g:airline_theme='badwolf'
 let g:airline_powerline_fonts = 1 " use powerline fonts
 
 " Nerdtree settings
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>  " map to Ctrl-n key
